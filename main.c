@@ -6,9 +6,11 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/22 18:57:15 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/02/22 19:13:54 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	main(int ac, char **av)
 {

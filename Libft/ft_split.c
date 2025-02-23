@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 07:58:14 by mmounsif          #+#    #+#             */
-/*   Updated: 2024/11/24 10:49:20 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:56:10 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,12 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	strs = ft_calloc(wordcount(s, c) + 1, sizeof(char *));
+	strs = ft_calloc(wordcount(s, c) + 2, sizeof(char *));
 	if (!strs)
 		return (NULL);
+	strs[0] = ft_calloc(1, sizeof(c));
 	i = 0;
-	k = 0;
+	k = 1;
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -84,8 +85,14 @@ char	**ft_split(char const *s, char c)
 
 // #include <stdio.h>
 
+// void leaks()
+// {
+// 	system("leaks -q a.out");
+// }
+
 // int main()
 // {
+// 	atexit(leaks);
 // 	int	i;
 // 	char s[] = "This split split my head";
 // 	char **strs = ft_split(s, ' ');
@@ -98,6 +105,8 @@ char	**ft_split(char const *s, char c)
 // 	while (strs[i])
 // 	{
 // 		printf("%s\n", strs[i]);
+// 		free(strs[i]);
 //         i++;
 // 	}
+// 	free(strs);
 // }

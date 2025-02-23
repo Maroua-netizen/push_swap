@@ -6,17 +6,21 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:04:59 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
 
+	if (ac == 1 || (ac == 2 && av[1][0] == '\0'))
+		return (1);
+	if (ac == 2)
+		av = ft_split(av[1], ' ');
 	a = NULL;
 	b = NULL;
 }

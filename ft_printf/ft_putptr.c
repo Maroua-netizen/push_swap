@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 12:30:48 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/09/07 20:03:12 by mmounsif          #+#    #+#             */
+/*   Updated: 2025/02/23 12:24:09 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_putptr(unsigned long long ptr, int *count)
 {
-	t_stack	*a;
-	t_stack	*b;
+	char	*hexa;
 
-	a = NULL;
-	b = NULL;
+	hexa = "0123456789abcdef";
+	if (ptr >= 16)
+		ft_putptr(ptr / 16, count);
+	write(1, &hexa[ptr % 16], 1);
+	(*count)++;
 }

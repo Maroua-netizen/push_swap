@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 12:30:48 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/09/07 20:03:12 by mmounsif          #+#    #+#             */
+/*   Updated: 2025/02/23 12:23:58 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_putnbr(int n, int *count)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
+	if (n == INT_MIN)
+	{
+		write(1, "-2147483648", 11);
+		*count += 11;
+		return ;
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = n * (-1);
+		(*count)++;
+	}
+	if (n >= 10)
+		ft_putnbr(n / 10, count);
+	n = n % 10 + '0';
+	write(1, &n, 1);
+	(*count)++;
 }

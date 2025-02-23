@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 12:30:48 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/09/07 20:03:12 by mmounsif          #+#    #+#             */
+/*   Updated: 2025/02/23 12:25:48 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_putunbr(unsigned int n, int *count)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
+	if (n >= 10)
+		ft_putunbr(n / 10, count);
+	n = n % 10 + '0';
+	write(1, &n, 1);
+	(*count)++;
 }

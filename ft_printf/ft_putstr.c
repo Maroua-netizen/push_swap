@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 12:30:48 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/08/31 05:48:04 by mmounsif          #+#    #+#             */
+/*   Updated: 2025/02/23 12:24:21 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_putstr(char *s, int *count)
 {
-	t_stack	*a;
-	t_stack	*b;
+	int	i;
 
-	a = NULL;
-	b = NULL;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		*count += 6;
+	}
+	else
+	{
+		i = 0;
+		while (s[i])
+		{
+			write(1, &s[i], 1);
+			(*count)++;
+			i++;
+		}
+	}
 }

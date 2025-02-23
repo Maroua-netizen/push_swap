@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/10/26 07:27:59 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/10/26 07:40:41 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(void)
+int	ft_isprint(int c)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
+
+// #include <stdio.h>
+// #include <ctype.h>
+
+// int	main ()
+// {
+// 	printf ("%d\n", ft_isprint(31));
+// 	printf ("%d\n", isprint(31));
+// }

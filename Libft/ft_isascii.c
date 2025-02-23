@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/10/26 07:21:15 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/10/26 07:27:15 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(void)
+int	ft_isascii(int c)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
+
+// #include <stdio.h>
+// #include <ctype.h>
+
+// int	main ()
+// {
+// 	printf ("%d\n", ft_isascii(128));
+// 	printf ("%d\n", isascii(128));
+// }

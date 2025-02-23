@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/09/12 18:48:15 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/11/19 01:35:38 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(void)
+char	*ft_strdup(const char *s1)
 {
-	t_stack	*a;
-	t_stack	*b;
+	char	*dest;
+	int		i;
 
-	a = NULL;
-	b = NULL;
+	dest = ft_calloc(ft_strlen(s1) + 1, sizeof(char));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	return (dest);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+// 	printf("%s\n", ft_strdup("abcd"));
+// }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/10/26 15:25:20 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/10/26 16:01:00 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(void)
+int	ft_toupper(int c)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
+
+//  #include <ctype.h>
+//  #include <stdio.h>
+
+//  int main()
+//  {
+// 	printf("%d\n", toupper('A'));
+// 	printf("%d\n", ft_toupper('A'));
+//  }

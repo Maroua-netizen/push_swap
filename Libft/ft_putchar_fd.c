@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/08/29 19:07:35 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/11/17 09:20:32 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_putchar_fd(char c, int fd)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
+	write(fd, &c, 1);
 }
+
+// #include <stdio.h>
+// #include <fcntl.h>
+
+// int main()
+// {
+// 	int fd;
+
+// 	fd = open("test.txt", O_CREAT | O_WRONLY | O_APPEND);
+// 	if (fd == -1)
+// 		perror("open");
+// 	ft_putchar_fd('c', fd);
+// 	close(fd);
+// 	if (fd == -1)
+// 		perror("close");
+// }

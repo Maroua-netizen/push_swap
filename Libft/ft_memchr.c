@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/10/31 19:48:57 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/11/24 10:18:13 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_stack	*a;
-	t_stack	*b;
+	unsigned int	i;
+	unsigned char	*ps;
 
-	a = NULL;
-	b = NULL;
+	ps = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (ps[i] == (unsigned char)c)
+			return (ps + i);
+		i++;
+	}
+	return (NULL);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+// 	printf("%s\n", ft_memchr(NULL, 'n', 3));
+// 	printf("%s\n", memchr(NULL, 'n', 3));
+// }

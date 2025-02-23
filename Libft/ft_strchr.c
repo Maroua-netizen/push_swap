@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/10/26 16:50:31 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/11/19 01:34:48 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	t_stack	*a;
-	t_stack	*b;
+	unsigned int	i;
+	size_t			len;
 
-	a = NULL;
-	b = NULL;
+	len = ft_strlen(s);
+	i = 0;
+	while (i <= len)
+	{
+		if (*s == (unsigned char) c)
+			return ((char *)s);
+		s++;
+		i++;
+	}
+	return (NULL);
 }
+
+// #include <string.h>
+// #include <stdio.h>
+
+// int main()
+// {
+// 	printf("%s\n", ft_strchr("abcdec", 't'));
+// }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/10/26 06:57:04 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/11/01 09:48:23 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(void)
+int	ft_isdigit(int c)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
+
+// #include <ctype.h>
+// #include <stdio.h>
+
+// int main()
+// {
+//     printf("%d\n", isdigit(2));
+//     printf("%d\n", ft_isdigit(2));
+// }

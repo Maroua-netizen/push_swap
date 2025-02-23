@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 13:45:47 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/11/06 14:17:07 by mmounsif          #+#    #+#             */
+/*   Updated: 2024/11/18 21:49:47 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_stack	*a;
-	t_stack	*b;
+	unsigned int	i;
 
-	a = NULL;
-	b = NULL;
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
+
+// #include <stdio.h>
+
+// void	ft_toupper(unsigned int i, char *c)
+// {
+// 	if (*c >= 'a' && *c <= 'z')
+// 		*c -= 32;
+// }
+
+// int main()
+// {
+// 	char s[] = "abcd";
+// 	ft_striteri(s, ft_toupper);
+// 	printf("%s\n", s);
+// }

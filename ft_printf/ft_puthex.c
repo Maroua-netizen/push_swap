@@ -6,11 +6,11 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 20:03:12 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 12:23:48 by mmounsif         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:38:08 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "ft_printf.h"
 
 void	ft_puthex(unsigned int n, int i, int *count)
 {

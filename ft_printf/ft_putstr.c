@@ -6,11 +6,11 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 05:48:04 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 12:24:21 by mmounsif         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:46:41 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "ft_printf.h"
 
 void	ft_putstr(char *s, int *count)
 {

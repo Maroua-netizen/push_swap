@@ -6,11 +6,35 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 22:24:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 12:29:49 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:42:43 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "ft_printf.h"
+
+static void	format_handler(const char format, va_list ap, int *count);
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	ap;
+	int		count;
+
+	va_start(ap, format);
+	count = 0;
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			format_handler(*format, ap, &count);
+		}
+		else
+			ft_putchar(*format, &count);
+		format++;
+	}
+	va_end(ap);
+	return (count);
+}
 
 static void	format_handler(const char format, va_list ap, int *count)
 {
@@ -33,26 +57,4 @@ static void	format_handler(const char format, va_list ap, int *count)
 		ft_putstr("0x", count);
 		ft_putptr(va_arg(ap, unsigned long long), count);
 	}
-}
-
-int	ft_printf(const char *format, ...)
-{
-	va_list	ap;
-	int		count;
-
-	va_start(ap, format);
-	count = 0;
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			format_handler(*format, ap, &count);
-		}
-		else
-			ft_putchar(*format, &count);
-		format++;
-	}
-	va_end(ap);
-	return (count);
 }

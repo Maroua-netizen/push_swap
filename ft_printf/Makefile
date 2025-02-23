@@ -5,39 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/22 18:22:10 by mmounsif          #+#    #+#              #
-#    Updated: 2025/02/23 13:36:06 by mmounsif         ###   ########.fr        #
+#    Created: 2024/12/09 22:23:57 by mmounsif          #+#    #+#              #
+#    Updated: 2025/02/23 13:23:21 by mmounsif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-FT_PRINTF_FLAGS = -Lft_printf -lftprintf
+NAME := libftprintf.a
+CC := cc
+CFLAGS := -Wall -Wextra -Werror
 
-SRC = main.c \
+SRC := ft_printf.c\
+		ft_putchar.c\
+		ft_putstr.c\
+		ft_putnbr.c\
+		ft_puthex.c\
+		ft_putunbr.c\
+		ft_putptr.c
+		
+OBJ := $(SRC:%.c=%.o)
 
-OBJ = $(SRC:.c=.o)
-
-all: printf $(NAME) 
-
+all: $(NAME)
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(FT_PRINTF_FLAGS) -o $(NAME)
-
-%.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-printf:
-	@make -C ft_printf
-
+	@ar -rcs $(NAME) $(OBJ)
+%.o: %.c ft_printf.h
+	@$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	rm -rf $(OBJ)
-	make -C ft_printf clean
-
+	@rm -rf $(OBJ)
 fclean: clean
-	rm -rf $(NAME)
-	make -C ft_printf fclean
-
+	@rm -rf $(NAME)
 re: fclean all
 
-.PHONY: all clean fclean re printf
+.PHONY: all clean fclean re

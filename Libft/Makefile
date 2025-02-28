@@ -6,7 +6,7 @@
 #    By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/25 14:46:30 by mmounsif          #+#    #+#              #
-#    Updated: 2024/11/19 00:42:12 by mmounsif         ###   ########.fr        #
+#    Updated: 2025/02/28 18:25:31 by mmounsif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME := libft.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
-SRC := ft_atoi.c\
+SRC := ft_atol.c\
 	ft_bzero.c\
 	ft_calloc.c\
 	ft_isalnum.c\

@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:20:08 by mmounsif          #+#    #+#             */
-/*   Updated: 2024/11/12 13:46:08 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:25:03 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	whitespaces(const char *str)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	int		sign;
 	int		i;
@@ -47,7 +47,7 @@ int	ft_atoi(const char *str)
 		nmb = nmb + str[i] - '0';
 		i++;
 	}
-	return ((int)(nmb * sign));
+	return (nmb * sign);
 }
 
 // #include <stdio.h>

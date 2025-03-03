@@ -6,7 +6,7 @@
 #    By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 18:22:10 by mmounsif          #+#    #+#              #
-#    Updated: 2025/02/23 14:00:15 by mmounsif         ###   ########.fr        #
+#    Updated: 2025/03/03 20:29:47 by mmounsif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ FT_PRINTF_FLAGS = -Lft_printf -lftprintf
 LIBFT_FLAGS = -Llibft -lft
 
 SRC = main.c \
+	Doubly_linked_lists.c \
 
 OBJ = $(SRC:.c=.o)
 

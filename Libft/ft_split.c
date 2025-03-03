@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 07:58:14 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/23 15:56:10 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/03 17:38:12 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,11 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	strs = ft_calloc(wordcount(s, c) + 2, sizeof(char *));
+	strs = ft_calloc(wordcount(s, c) + 1, sizeof(char *));
 	if (!strs)
 		return (NULL);
-	strs[0] = ft_calloc(1, sizeof(c));
 	i = 0;
-	k = 1;
+	k = 0;
 	while (s[i])
 	{
 		while (s[i] == c)

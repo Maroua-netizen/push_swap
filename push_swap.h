@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 09:03:31 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 10:37:27 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ typedef struct s_stack {
 }					t_stack;
 
 void	init(t_stack **head, t_stack **tail, int value);
-void	deallocate(t_stack **head, t_stack **tail);
-void	insert_begin(t_stack **head, int value);
 void	insert_end(t_stack **tail, int value);
-void	insert_after(t_stack *node, int value);
+t_stack	*find_node(t_stack *head, int value);
+void	deallocate(t_stack **head, t_stack **tail);
 void	free_tab(char **tab);
 
 #endif

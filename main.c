@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 10:15:29 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 10:48:33 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	null_check(char **av);
 void	error_check(char **av);
 void	parsing(char **av, t_stack **a, t_stack **a_tail);
+void	double_check(t_stack **a, t_stack **a_tail);
 
 int	main(int ac, char **av)
 {
@@ -32,6 +33,7 @@ int	main(int ac, char **av)
 	a_tail = NULL;
 	b_tail = NULL;
 	parsing(av, &a, &a_tail);
+	double_check(&a, &a_tail);
 	t_stack	*curr = a;
 	while (curr)
 	{
@@ -105,5 +107,22 @@ void	parsing(char **av, t_stack **a, t_stack **a_tail)
 		}
 		free_tab(strs);
 		i++;
+	}
+}
+
+void	double_check(t_stack **a, t_stack **a_tail)
+{
+	t_stack	*curr;
+
+	curr = *a;
+	while (curr)
+	{
+		if (find_node(curr->next, curr->n))
+		{
+			deallocate(a, a_tail);
+			ft_printf("Error\n");
+			exit(3);
+		}
+		curr = curr->next;
 	}
 }

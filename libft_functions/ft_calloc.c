@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 14:29:35 by mmounsif          #+#    #+#             */
-/*   Updated: 2024/11/19 01:22:34 by mmounsif         ###   ########.fr       */
+/*   Created: 2024/11/01 07:59:29 by mmounsif          #+#    #+#             */
+/*   Updated: 2025/03/04 11:39:57 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_bzero(void *s, size_t n)
+static void	ft_bzero(void *s, size_t n);
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	if (size != 0 && count > SIZE_MAX / size)
+		return (NULL);
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
+}
+
+static void	ft_bzero(void *s, size_t n)
 {
 	unsigned int	i;
 	unsigned char	*pb;
@@ -25,22 +40,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-// #include <string.h>
-// #include <stdio.h>
-
-// int main()
-// {
-// 	unsigned int	i;
-// 	unsigned int	len;
-
-// 	char str[] = "abcd";
-// 	len = strlen(str);
-// 	bzero(str, 2);
-// 	i = 0;
-// 	while (i < len)
-// 	{
-// 		printf("%c\n", str[i]);
-// 		i++;
-// 	}
-// }

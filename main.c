@@ -6,16 +6,16 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 10:48:33 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:47:57 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	null_check(char **av);
-void	error_check(char **av);
-void	parsing(char **av, t_stack **a, t_stack **a_tail);
-void	double_check(t_stack **a, t_stack **a_tail);
+static void	null_check(char **av);
+static void	error_check(char **av);
+static void	parsing(char **av, t_stack **a, t_stack **a_tail);
+static void	double_check(t_stack **a, t_stack **a_tail);
 
 int	main(int ac, char **av)
 {
@@ -42,7 +42,7 @@ int	main(int ac, char **av)
 	}
 }
 
-void	null_check(char **av)
+static void	null_check(char **av)
 {
 	int	i;
 
@@ -58,7 +58,7 @@ void	null_check(char **av)
 	}
 }
 
-void	error_check(char **av)
+static void	error_check(char **av)
 {
 	int	i;
 	int	j;
@@ -83,7 +83,7 @@ void	error_check(char **av)
 	}
 }
 
-void	parsing(char **av, t_stack **a, t_stack **a_tail)
+static void	parsing(char **av, t_stack **a, t_stack **a_tail)
 {
 	char	**strs;
 	int		i;
@@ -110,7 +110,7 @@ void	parsing(char **av, t_stack **a, t_stack **a_tail)
 	}
 }
 
-void	double_check(t_stack **a, t_stack **a_tail)
+static void	double_check(t_stack **a, t_stack **a_tail)
 {
 	t_stack	*curr;
 

@@ -6,11 +6,11 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 07:58:14 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/03 17:38:12 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:37:17 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static int	wordcount(const char *str, char c)
 {
@@ -81,31 +81,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (strs);
 }
-
-// #include <stdio.h>
-
-// void leaks()
-// {
-// 	system("leaks -q a.out");
-// }
-
-// int main()
-// {
-// 	atexit(leaks);
-// 	int	i;
-// 	char s[] = "This split split my head";
-// 	char **strs = ft_split(s, ' ');
-// 	if (!strs)
-// 	{
-// 		printf("(NULL)\n");
-// 		return (0);
-// 	}
-// 	i = 0;
-// 	while (strs[i])
-// 	{
-// 		printf("%s\n", strs[i]);
-// 		free(strs[i]);
-//         i++;
-// 	}
-// 	free(strs);
-// }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:20:08 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/02/28 18:25:03 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:36:58 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static int	whitespaces(const char *str)
 {
@@ -49,12 +49,3 @@ long	ft_atol(const char *str)
 	}
 	return (nmb * sign);
 }
-
-// #include <stdio.h>
-// #include <stdlib.h>
-
-// int main()
-// {
-// 	printf("%d\n", ft_atoi("9223372036854775808\n"));
-//     printf("%d\n", atoi("9223372036854775808\n"));
-// }

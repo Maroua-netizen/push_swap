@@ -6,11 +6,11 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:51:49 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/03 20:01:58 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 09:50:02 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	init(t_stack **head, t_stack **tail, int value)
 {

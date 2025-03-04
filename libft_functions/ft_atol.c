@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:20:08 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 11:36:58 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 20:10:20 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ long	ft_atol(const char *str)
 		if (nmb > (LONG_MAX - (str[i] - '0')) / 10)
 		{
 			if (sign == -1)
-				return ((int)LONG_MIN);
-			return ((int)LONG_MAX);
+				return (LONG_MIN);
+			return (LONG_MAX);
 		}
 		nmb *= 10;
 		nmb = nmb + str[i] - '0';

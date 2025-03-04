@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 11:47:57 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/04 20:14:26 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ static void	error_check(char **av);
 static void	parsing(char **av, t_stack **a, t_stack **a_tail);
 static void	double_check(t_stack **a, t_stack **a_tail);
 
+void	leaks(void)
+{
+	system("leaks -q push_swap");
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -24,6 +29,7 @@ int	main(int ac, char **av)
 	t_stack	*a_tail;
 	t_stack	*b_tail;
 
+	atexit(leaks);
 	if (ac == 1)
 		return (1);
 	null_check(av);
@@ -40,6 +46,8 @@ int	main(int ac, char **av)
 		ft_printf("%d ", curr->n);
 		curr = curr->next;
 	}
+	ft_printf("\n\n");
+	deallocate(&a, &a_tail);
 }
 
 static void	null_check(char **av)
@@ -95,14 +103,14 @@ static void	parsing(char **av, t_stack **a, t_stack **a_tail)
 		strs = ft_split(av[i], ' ');
 		if (i == 1)
 		{
-			init(a, a_tail, ft_atol(strs[0]));
+			init(a, a_tail, ft_atol(strs[0]), strs);
 			j = 1;
 		}
 		else
 			j = 0;
 		while (strs[j])
 		{
-			insert_end(a_tail, ft_atol(strs[j]));
+			insert_end(a, a_tail, ft_atol(strs[j]), strs);
 			j++;
 		}
 		free_tab(strs);

@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 11:46:35 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/05 17:46:20 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ int	main(int ac, char **av)
 	b_tail = NULL;
 	parsing(av, &a, &a_tail);
 	double_check(&a, &a_tail);
+	rotate(&a, &a_tail);
 	reverse_rotate(&a, &a_tail);
+	swap(&a);
+	push(&a, &a_tail, &b, &b_tail);
 	t_stack	*curr = a;
 	while (curr)
 	{
@@ -48,15 +51,15 @@ int	main(int ac, char **av)
 		curr = curr->next;
 	}
 	ft_printf("\n");
-	// curr = b;
-	// while (curr)
-	// {
-	// 	ft_printf("%d ", curr->n);
-	// 	curr = curr->next;
-	// }
+	curr = b;
+	while (curr)
+	{
+		ft_printf("%d ", curr->n);
+		curr = curr->next;
+	}
 	ft_printf("\n\n");
 	free_list(&a, &a_tail);
-	// free_list(&b, &b_tail);
+	free_list(&b, &b_tail);
 }
 
 static void	null_check(char **av)

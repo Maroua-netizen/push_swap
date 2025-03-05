@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_tab.c                                         :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 09:02:18 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 09:50:06 by mmounsif         ###   ########.fr       */
+/*   Created: 2025/03/05 10:36:18 by mmounsif          #+#    #+#             */
+/*   Updated: 2025/03/05 11:25:51 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	free_tab(char **tab)
+void	push(t_stack **head1, t_stack **tail1, t_stack **head2, t_stack **tail2)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
+	if (!(*head1))
+		return ;
+	if (!(*head2))
+		init(head2, tail2, (*head1)->n, NULL);
+	else
+		insert_begin(head2, (*head1)->n);
+	remove_node(*head1, head1, tail1);
 }

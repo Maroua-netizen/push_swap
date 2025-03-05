@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 10:13:36 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/05 11:29:34 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,21 @@ void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int c);
 long	ft_atol(const char *str);
 
-//Linked lists
+//Lists manipulation
 void	init(t_stack **head, t_stack **tail, long value, char **strs);
+void	insert_begin(t_stack **head, int value);
 void	insert_end(t_stack **head, t_stack **tail, long value, char **strs);
 t_stack	*find_node(t_stack *head, int value);
-void	deallocate(t_stack **head, t_stack **tail);
 int		ft_list_size(t_stack *head);
 
 //Instructions
+void	push(t_stack **head1, t_stack **tail1, 
+			t_stack **head2, t_stack **tail2);
 void	swap(t_stack **a);
 
-//Other
+//Free
 void	free_tab(char **tab);
+void	free_list(t_stack **head, t_stack **tail);
+void	remove_node(t_stack *node, t_stack **head, t_stack **tail);
 
 #endif

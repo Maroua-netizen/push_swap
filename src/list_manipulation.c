@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Doubly_linked_lists.c                              :+:      :+:    :+:   */
+/*   list_manipulation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:51:49 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 09:56:55 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/05 11:28:51 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,20 @@ void	init(t_stack **head, t_stack **tail, long value, char **strs)
 	*tail = new_node;
 }
 
+void	insert_begin(t_stack **head, int value)
+{
+	t_stack	*new_node;
+
+	new_node = malloc(sizeof(t_stack));
+	if (!new_node)
+		return ;
+	new_node->prev = NULL;
+	new_node->n = value;
+	new_node->next = *head;
+	(*head)->prev = new_node;
+	*head = new_node;
+}
+
 void	insert_end(t_stack **head, t_stack **tail, long value, char **strs)
 {
 	t_stack	*new_node;
@@ -39,7 +53,7 @@ void	insert_end(t_stack **head, t_stack **tail, long value, char **strs)
 	if (value > INT_MAX || value < INT_MIN)
 	{
 		free_tab(strs);
-		deallocate(head, tail);
+		free_list(head, tail);
 		ft_printf("Error\n");
 		exit(5);
 	}
@@ -65,23 +79,6 @@ t_stack	*find_node(t_stack *head, int value)
 		curr = curr->next;
 	}
 	return (NULL);
-}
-
-void	deallocate(t_stack **head, t_stack **tail)
-{
-	t_stack	*curr;
-
-	if (!head && !tail)
-		return ;
-	curr = *head;
-	while (curr->next)
-	{
-		curr = curr->next;
-		free(curr->prev);
-	}
-	free(curr);
-	*head = NULL;
-	*tail = NULL;
 }
 
 int	ft_list_size(t_stack *head)

@@ -6,7 +6,7 @@
 #    By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 18:22:10 by mmounsif          #+#    #+#              #
-#    Updated: 2025/03/05 10:14:11 by mmounsif         ###   ########.fr        #
+#    Updated: 2025/03/05 10:47:52 by mmounsif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ SRC = main.c \
 	libft_functions/ft_calloc.c \
 	libft_functions/ft_isdigit.c \
 	libft_functions/ft_split.c \
-	src/Doubly_linked_lists.c \
-	src/free_tab.c \
+	src/list_manipulation.c \
+	src/free.c \
+	src/push.c \
 	src/swap.c \
 
 OBJ = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 11:29:34 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/05 11:45:55 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int		ft_list_size(t_stack *head);
 void	push(t_stack **head1, t_stack **tail1, 
 			t_stack **head2, t_stack **tail2);
 void	swap(t_stack **a);
+void	rotate(t_stack **head, t_stack **tail);
+void	reverse_rotate(t_stack **head, t_stack **tail);
 
 //Free
 void	free_tab(char **tab);

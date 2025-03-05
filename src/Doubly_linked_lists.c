@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:51:49 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 20:11:42 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/05 09:56:55 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,11 @@ void	deallocate(t_stack **head, t_stack **tail)
 	free(curr);
 	*head = NULL;
 	*tail = NULL;
+}
+
+int	ft_list_size(t_stack *head)
+{
+	if (!head)
+		return (0);
+	return (1 + ft_list_size(head->next));
 }

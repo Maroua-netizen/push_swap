@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/04 20:13:19 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/05 10:13:36 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,23 @@ typedef struct s_stack {
 	struct s_stack	*next;
 }					t_stack;
 
-//Libft functions
+//Libft
 char	**ft_split(char const *s, char c);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int c);
 long	ft_atol(const char *str);
 
-//Linked lists functions
+//Linked lists
 void	init(t_stack **head, t_stack **tail, long value, char **strs);
 void	insert_end(t_stack **head, t_stack **tail, long value, char **strs);
 t_stack	*find_node(t_stack *head, int value);
 void	deallocate(t_stack **head, t_stack **tail);
+int		ft_list_size(t_stack *head);
 
-//Other functions
+//Instructions
+void	swap(t_stack **a);
+
+//Other
 void	free_tab(char **tab);
 
 #endif

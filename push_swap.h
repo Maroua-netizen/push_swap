@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 11:45:55 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:12:06 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	insert_begin(t_stack **head, int value);
 void	insert_end(t_stack **head, t_stack **tail, long value, char **strs);
 t_stack	*find_node(t_stack *head, int value);
 int		ft_list_size(t_stack *head);
+void	is_sorted(t_stack *a, t_stack *a_tail);
 
 //Instructions
 void	push(t_stack **head1, t_stack **tail1, 

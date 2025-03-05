@@ -6,7 +6,7 @@
 #    By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 18:22:10 by mmounsif          #+#    #+#              #
-#    Updated: 2025/03/05 11:46:14 by mmounsif         ###   ########.fr        #
+#    Updated: 2025/03/05 18:00:21 by mmounsif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = main.c \
 	src/swap.c \
 	src/rotate.c \
 	src/reverse_rotate.c \
+	src/is_sorted.c \
 
 OBJ = $(SRC:.c=.o)
 

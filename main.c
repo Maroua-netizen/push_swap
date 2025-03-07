@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 13:16:16 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:06:47 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,16 @@ void	leaks(void)
 
 int	main(int ac, char **av)
 {
-	t_stack	*a;
-	t_stack	*b;
-	t_stack	*a_tail;
-	t_stack	*b_tail;
+	static t_stack	*a;
+	static t_stack	*b;
+	static t_stack	*a_tail;
+	static t_stack	*b_tail;
 
 	atexit(leaks);
 	if (ac == 1)
 		return (1);
 	null_check(av);
 	error_check(av);
-	a = NULL;
-	b = NULL;
-	a_tail = NULL;
-	b_tail = NULL;
 	parsing(av, &a, &a_tail);
 	double_check(&a, &a_tail);
 	is_sorted(a, a_tail);

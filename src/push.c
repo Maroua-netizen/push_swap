@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:36:18 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 12:49:19 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 16:36:29 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	pa(t_stack **b, t_stack **b_tail, t_stack **a, t_stack **a_tail)
 void	pb(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail)
 {
 	if (push(a, a_tail, b, b_tail))
-		ft_printf("pa\n");
+		ft_printf("pb\n");
 }

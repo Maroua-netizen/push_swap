@@ -6,19 +6,19 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 09:37:21 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 10:38:13 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:47:10 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(t_stack **head)
+bool	swap(t_stack **head)
 {
 	t_stack	*first;
 	t_stack	*second;
 
 	if (ft_list_size(*head) < 2)
-		return ;
+		return (false);
 	first = *head;
 	second = first->next;
 	second->prev = NULL;
@@ -28,4 +28,27 @@ void	swap(t_stack **head)
 		second->next->prev = first;
 	second->next = first;
 	*head = second;
+	return (true);
+}
+
+void	sa(t_stack **a)
+{
+	if (swap(a))
+		ft_printf("sa\n");
+}
+
+void	sb(t_stack **b)
+{
+	if (swap(b))
+		ft_printf("sb\n");
+}
+
+void	ss(t_stack **a, t_stack **b)
+{
+	if (swap(a) && swap(b))
+		ft_printf("ss\n");
+	else if (swap(a) && !swap(b))
+		ft_printf("sa\n");
+	else if (!swap(a) && swap(b))
+		ft_printf("sb\n");
 }

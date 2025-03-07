@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 18:12:06 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:50:26 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ft_printf/ft_printf.h"
 # include <stdlib.h>
+# include <stdbool.h>
 
 typedef struct s_stack {
 	int				n;
@@ -37,11 +38,25 @@ int		ft_list_size(t_stack *head);
 void	is_sorted(t_stack *a, t_stack *a_tail);
 
 //Instructions
-void	push(t_stack **head1, t_stack **tail1, 
+bool	push(t_stack **head1, t_stack **tail1, 
 			t_stack **head2, t_stack **tail2);
-void	swap(t_stack **a);
-void	rotate(t_stack **head, t_stack **tail);
-void	reverse_rotate(t_stack **head, t_stack **tail);
+void	pa(t_stack **b, t_stack **b_tail, t_stack **a, t_stack **a_tail);
+void	pb(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
+
+bool	swap(t_stack **a);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+
+bool	rotate(t_stack **head, t_stack **tail);
+void	ra(t_stack **a, t_stack **a_tail);
+void	rb(t_stack **b, t_stack **b_tail);
+void	rr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
+
+bool	reverse_rotate(t_stack **head, t_stack **tail);
+void	rra(t_stack **a, t_stack **a_tail);
+void	rrb(t_stack **b, t_stack **b_tail);
+void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 
 //Free
 void	free_tab(char **tab);

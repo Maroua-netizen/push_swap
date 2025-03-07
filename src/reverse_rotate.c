@@ -6,16 +6,39 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:41:57 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 17:38:38 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:51:35 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	reverse_rotate(t_stack **head, t_stack **tail)
+bool	reverse_rotate(t_stack **head, t_stack **tail)
 {
 	if (ft_list_size(*head) < 2)
-		return ;
+		return (false);
 	insert_begin(head, (*tail)->n);
 	remove_node(*tail, head, tail);
+	return (true);
+}
+
+void	rra(t_stack **a, t_stack **a_tail)
+{
+	if (reverse_rotate(a, a_tail))
+		ft_printf("rra\n");
+}
+
+void	rrb(t_stack **b, t_stack **b_tail)
+{
+	if (reverse_rotate(b, b_tail))
+		ft_printf("rrb\n");
+}
+
+void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail)
+{
+	if (reverse_rotate(a, a_tail) && reverse_rotate(b, b_tail))
+		ft_printf("rrr\n");
+	else if (reverse_rotate(a, a_tail) && !reverse_rotate(b, b_tail))
+		ft_printf("rra\n");
+	else if (!reverse_rotate(a, a_tail) && reverse_rotate(b, b_tail))
+		ft_printf("rrb\n");
 }

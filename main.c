@@ -6,16 +6,13 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 12:50:49 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 13:02:07 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	null_check(char **av);
-static void	error_check(char **av);
 static void	parsing(char **av, t_stack **a, t_stack **a_tail);
-static void	double_check(t_stack **a, t_stack **a_tail);
 
 void	leaks(void)
 {
@@ -59,49 +56,10 @@ int	main(int ac, char **av)
 		curr = curr->next;
 	}
 	ft_printf("\n\n");
-	free_list(&a, &a_tail);
-	free_list(&b, &b_tail);
-}
-
-static void	null_check(char **av)
-{
-	int	i;
-
-	i = 1;
-	while (av[i])
-	{
-		if (!av[i][0])
-		{
-			ft_printf("Error\n");
-			exit(1);
-		}
-		i++;
-	}
-}
-
-static void	error_check(char **av)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (av[i])
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]) 
-				&& !((av[i][j] >= '\t' && av[i][j] <= '\r') || av[i][j] == ' ')
-				&& !((av[i][j] == '-' || av[i][j] == '+') 
-				&& ft_isdigit(av[i][j + 1])))
-			{
-				ft_printf("Error\n");
-				exit(2);
-			}
-			j++;
-		}
-		i++;
-	}
+	if (a)
+		free_list(&a, &a_tail);
+	if (b)
+		free_list(&b, &b_tail);
 }
 
 static void	parsing(char **av, t_stack **a, t_stack **a_tail)
@@ -126,24 +84,7 @@ static void	parsing(char **av, t_stack **a, t_stack **a_tail)
 			insert_end(a, a_tail, ft_atol(strs[j]), strs);
 			j++;
 		}
-		free_tab(strs);
+		free_matrix(strs);
 		i++;
-	}
-}
-
-static void	double_check(t_stack **a, t_stack **a_tail)
-{
-	t_stack	*curr;
-
-	curr = *a;
-	while (curr)
-	{
-		if (find_node(curr->next, curr->n))
-		{
-			free_list(a, a_tail);
-			ft_printf("Error\n");
-			exit(3);
-		}
-		curr = curr->next;
 	}
 }

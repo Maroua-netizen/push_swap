@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:51:49 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 11:28:51 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:57:29 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init(t_stack **head, t_stack **tail, long value, char **strs)
 
 	if (value > INT_MAX || value < INT_MIN)
 	{
-		free_tab(strs);
+		free_matrix(strs);
 		ft_printf("Error\n");
 		exit(4);
 	}
@@ -52,7 +52,7 @@ void	insert_end(t_stack **head, t_stack **tail, long value, char **strs)
 
 	if (value > INT_MAX || value < INT_MIN)
 	{
-		free_tab(strs);
+		free_matrix(strs);
 		free_list(head, tail);
 		ft_printf("Error\n");
 		exit(5);

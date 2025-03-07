@@ -6,23 +6,23 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:02:18 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/05 11:22:41 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:56:28 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	free_tab(char **tab)
+void	free_matrix(char **matrix)
 {
 	int	i;
 
 	i = 0;
-	while (tab[i])
+	while (matrix[i])
 	{
-		free(tab[i]);
+		free(matrix[i]);
 		i++;
 	}
-	free(tab);
+	free(matrix);
 }
 
 void	free_list(t_stack **head, t_stack **tail)

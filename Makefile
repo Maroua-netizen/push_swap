@@ -6,7 +6,7 @@
 #    By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 18:22:10 by mmounsif          #+#    #+#              #
-#    Updated: 2025/03/05 18:00:21 by mmounsif         ###   ########.fr        #
+#    Updated: 2025/03/07 13:03:00 by mmounsif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,13 @@ SRC = main.c \
 	libft_functions/ft_calloc.c \
 	libft_functions/ft_isdigit.c \
 	libft_functions/ft_split.c \
+	src/checks.c \
 	src/list_manipulation.c \
 	src/free.c \
 	src/push.c \
 	src/swap.c \
 	src/rotate.c \
 	src/reverse_rotate.c \
-	src/is_sorted.c \
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 12:50:26 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 13:04:12 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,18 @@ void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int c);
 long	ft_atol(const char *str);
 
+//Checks
+void	null_check(char **av);
+void	error_check(char **av);
+void	double_check(t_stack **a, t_stack **a_tail);
+void	is_sorted(t_stack *a, t_stack *a_tail);
+
 //Lists manipulation
 void	init(t_stack **head, t_stack **tail, long value, char **strs);
 void	insert_begin(t_stack **head, int value);
 void	insert_end(t_stack **head, t_stack **tail, long value, char **strs);
 t_stack	*find_node(t_stack *head, int value);
 int		ft_list_size(t_stack *head);
-void	is_sorted(t_stack *a, t_stack *a_tail);
 
 //Instructions
 bool	push(t_stack **head1, t_stack **tail1, 
@@ -59,7 +64,7 @@ void	rrb(t_stack **b, t_stack **b_tail);
 void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 
 //Free
-void	free_tab(char **tab);
+void	free_matrix(char **matrix);
 void	free_list(t_stack **head, t_stack **tail);
 void	remove_node(t_stack *node, t_stack **head, t_stack **tail);
 

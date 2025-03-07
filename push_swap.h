@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 13:04:12 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/07 13:20:13 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ bool	reverse_rotate(t_stack **head, t_stack **tail);
 void	rra(t_stack **a, t_stack **a_tail);
 void	rrb(t_stack **b, t_stack **b_tail);
 void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
+
+//Sorting
+void	sort(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 
 //Free
 void	free_matrix(char **matrix);

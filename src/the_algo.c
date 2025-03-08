@@ -6,13 +6,13 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:07:06 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 16:17:54 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 16:34:05 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void		range_push(t_stack **a, t_stack **a_tail,
+static void		push_range(t_stack **a, t_stack **a_tail,
 					t_stack **b, t_stack **b_tail);
 static void		push_back(t_stack **a, t_stack **a_tail,
 					t_stack **b, t_stack **b_tail);
@@ -20,11 +20,11 @@ static int		biggest_position(t_stack *b);
 
 void	the_algo(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail)
 {
-	range_push(a, a_tail, b, b_tail);
+	push_range(a, a_tail, b, b_tail);
 	push_back(a, a_tail, b, b_tail);
 }
 
-static void	range_push(t_stack **a, t_stack **a_tail,
+static void	push_range(t_stack **a, t_stack **a_tail,
 					t_stack **b, t_stack **b_tail)
 {
 	int	min;

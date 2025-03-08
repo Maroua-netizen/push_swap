@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:07:06 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 16:34:05 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 16:43:10 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	push_range(t_stack **a, t_stack **a_tail,
 	int	max;
 
 	min = 1;
-	max = (int)(5 / 100 * ft_list_size(*a) + 10);
+	max = 0.048 * ft_list_size(*a) + 10;
 	while (*a)
 	{
 		if ((*a)->position >= min && (*a)->position <= max)

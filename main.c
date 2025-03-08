@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 16:19:01 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 16:42:21 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	static t_stack	*a_tail;
 	static t_stack	*b_tail;
 
-	atexit(leaks);
+	// atexit(leaks);
 	if (ac == 1)
 		return (1);
 	null_check(av);
@@ -36,13 +36,13 @@ int	main(int ac, char **av)
 	if (is_sorted(a, a_tail))
 		return (free_list(&a, &a_tail), 0);
 	sort(&a, &a_tail, &b, &b_tail);
-	t_stack *curr = a;
-	while (curr)
-	{
-		get_position(&a);
-		ft_printf("%d\n", curr->n);
-		curr = curr->next;
-	}
+	// t_stack *curr = a;
+	// while (curr)
+	// {
+	// 	get_position(&a);
+	// 	ft_printf("%d\n", curr->n);
+	// 	curr = curr->next;
+	// }
 	free_list(&a, &a_tail);
 }
 

@@ -6,11 +6,25 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 12:59:38 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 13:01:27 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 08:44:50 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static bool	allspaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' '))
+			return (false);
+		i++;
+	}
+	return (true);
+}
 
 void	null_check(char **av)
 {
@@ -19,7 +33,7 @@ void	null_check(char **av)
 	i = 1;
 	while (av[i])
 	{
-		if (!av[i][0])
+		if (!av[i][0] || allspaces(av[i]))
 		{
 			ft_printf("Error\n");
 			exit(1);

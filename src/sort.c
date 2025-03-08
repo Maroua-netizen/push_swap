@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 13:16:37 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 11:57:14 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 14:08:16 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ void	sort(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail)
 	size = ft_list_size(*a);
 	if (size <= 3)
 		sort_three(a, a_tail);
-	if (size == 4)
+	else if (size == 4)
 		sort_four(a, a_tail, b, b_tail);
-	if (size == 5)
+	else if (size == 5)
 		sort_five(a, a_tail, b, b_tail);
+	else
+		the_algo(a, a_tail, b, b_tail);
 }
 
 static void	sort_three(t_stack **a, t_stack **a_tail)

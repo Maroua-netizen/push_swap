@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 12:57:41 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 16:24:00 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ bool	is_sorted(t_stack *a, t_stack *a_tail);
 void	init(t_stack **head, t_stack **tail, long value, char **strs);
 void	insert_begin(t_stack **head, int value);
 void	insert_end(t_stack **head, t_stack **tail, long value, char **strs);
-t_stack	*find_node(t_stack *head, int value);
 int		ft_list_size(t_stack *head);
+t_stack	*find_node(t_stack *head, int value);
 t_stack	*biggest_node(t_stack *head);
 t_stack	*smallest_node(t_stack *head);
 
@@ -69,6 +69,7 @@ void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 //Sorting
 void	sort(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 void	get_position(t_stack **a);
+void	the_algo(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 
 //Free
 void	free_matrix(char **matrix);

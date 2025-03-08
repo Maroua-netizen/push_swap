@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 11:52:08 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 12:57:41 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct s_stack {
 	int				n;
+	int				position;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
@@ -67,6 +68,7 @@ void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 
 //Sorting
 void	sort(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
+void	get_position(t_stack **a);
 
 //Free
 void	free_matrix(char **matrix);

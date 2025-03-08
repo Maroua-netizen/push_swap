@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 11:55:53 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:24:42 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,21 @@ int	main(int ac, char **av)
 	double_check(&a, &a_tail);
 	if (is_sorted(a, a_tail))
 		return (free_list(&a, &a_tail), 0);
+	t_stack *curr = a;
+	while (curr)
+	{
+		ft_printf("position %d: %d\n", curr->position, curr->n);
+		curr = curr->next;
+	}
 	sort(&a, &a_tail, &b, &b_tail);
+	ft_printf("After sorting:\n");
+	curr = a;
+	while (curr)
+	{
+		get_position(&a);
+		ft_printf("position %d: %d\n", curr->position, curr->n);
+		curr = curr->next;
+	}
 	free_list(&a, &a_tail);
 }
 
@@ -64,4 +78,5 @@ static void	parsing(char **av, t_stack **a, t_stack **a_tail)
 		free_matrix(strs);
 		i++;
 	}
+	get_position(a);
 }

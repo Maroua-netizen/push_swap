@@ -6,25 +6,32 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 13:16:37 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 13:59:37 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 11:57:14 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void		small_sort(t_stack **a, t_stack **a_tail);
-static t_stack	*biggest_node(t_stack *head);
+static void		sort_three(t_stack **a, t_stack **a_tail);
+static void		sort_four(t_stack **a, t_stack **a_tail,
+					t_stack **b, t_stack **b_tail);
+static void		sort_five(t_stack **a, t_stack **a_tail,
+					t_stack **b, t_stack **b_tail);
 
 void	sort(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail)
 {
-	if (ft_list_size(*a) <= 3)
-		small_sort(a, a_tail);
-	(void)a_tail;
-	(void)b;
-	(void)b_tail;
+	int	size;
+
+	size = ft_list_size(*a);
+	if (size <= 3)
+		sort_three(a, a_tail);
+	if (size == 4)
+		sort_four(a, a_tail, b, b_tail);
+	if (size == 5)
+		sort_five(a, a_tail, b, b_tail);
 }
 
-static void	small_sort(t_stack **a, t_stack **a_tail)
+static void	sort_three(t_stack **a, t_stack **a_tail)
 {
 	if (*a == biggest_node(*a))
 		ra(a, a_tail);
@@ -34,18 +41,22 @@ static void	small_sort(t_stack **a, t_stack **a_tail)
 		sa(a);
 }
 
-static t_stack	*biggest_node(t_stack *head)
+static void	sort_four(t_stack **a, t_stack **a_tail,
+				t_stack **b, t_stack **b_tail)
 {
-	t_stack	*curr;
-	t_stack	*biggest;
+	while (*a != smallest_node(*a))
+		ra(a, a_tail);
+	pb(a, a_tail, b, b_tail);
+	sort_three(a, a_tail);
+	pa(b, b_tail, a, a_tail);
+}
 
-	curr = head;
-	biggest = curr;
-	while (curr)
-	{
-		if (curr->n > biggest->n)
-			biggest = curr;
-		curr = curr->next;
-	}
-	return (biggest);
+static void	sort_five(t_stack **a, t_stack **a_tail,
+					t_stack **b, t_stack **b_tail)
+{
+	while (*a != smallest_node(*a))
+		ra(a, a_tail);
+	pb(a, a_tail, b, b_tail);
+	sort_four(a, a_tail, b, b_tail);
+	pa(b, b_tail, a, a_tail);
 }

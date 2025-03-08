@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 12:59:38 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 08:44:50 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 09:13:28 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	double_check(t_stack **a, t_stack **a_tail)
 	}
 }
 
-void	is_sorted(t_stack *a, t_stack *a_tail)
+bool	is_sorted(t_stack *a, t_stack *a_tail)
 {
 	t_stack	*curr;
 
@@ -92,8 +92,6 @@ void	is_sorted(t_stack *a, t_stack *a_tail)
 	while (curr->next && curr->n < curr->next->n)
 		curr = curr->next;
 	if (curr == a_tail)
-	{
-		free_list(&a, &a_tail);
-		exit(0);
-	}
+		return (true);
+	return (false);
 }

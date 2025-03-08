@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 14:06:47 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 11:55:53 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,10 @@ int	main(int ac, char **av)
 	error_check(av);
 	parsing(av, &a, &a_tail);
 	double_check(&a, &a_tail);
-	is_sorted(a, a_tail);
+	if (is_sorted(a, a_tail))
+		return (free_list(&a, &a_tail), 0);
 	sort(&a, &a_tail, &b, &b_tail);
-	t_stack	*curr = a;
-	while (curr)
-	{
-		ft_printf("%d ", curr->n);
-		curr = curr->next;
-	}
-	ft_printf("\n");
-	curr = b;
-	while (curr)
-	{
-		ft_printf("%d ", curr->n);
-		curr = curr->next;
-	}
-	ft_printf("\n\n");
-	if (a)
-		free_list(&a, &a_tail);
-	if (b)
-		free_list(&b, &b_tail);
+	free_list(&a, &a_tail);
 }
 
 static void	parsing(char **av, t_stack **a, t_stack **a_tail)

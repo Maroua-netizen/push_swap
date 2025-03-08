@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 13:20:13 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/08 11:52:08 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ long	ft_atol(const char *str);
 void	null_check(char **av);
 void	error_check(char **av);
 void	double_check(t_stack **a, t_stack **a_tail);
-void	is_sorted(t_stack *a, t_stack *a_tail);
+bool	is_sorted(t_stack *a, t_stack *a_tail);
 
 //Lists manipulation
 void	init(t_stack **head, t_stack **tail, long value, char **strs);
@@ -41,6 +41,8 @@ void	insert_begin(t_stack **head, int value);
 void	insert_end(t_stack **head, t_stack **tail, long value, char **strs);
 t_stack	*find_node(t_stack *head, int value);
 int		ft_list_size(t_stack *head);
+t_stack	*biggest_node(t_stack *head);
+t_stack	*smallest_node(t_stack *head);
 
 //Instructions
 bool	push(t_stack **head1, t_stack **tail1, 

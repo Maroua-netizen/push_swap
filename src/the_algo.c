@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:07:06 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/09 09:58:32 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 13:14:56 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	push_range(t_stack **a, t_stack **a_tail,
 			min++;
 			max++;
 		}
-		else if ((*a)->position < max)
+		else if ((*a)->position < min)
 		{
 			pb(a, a_tail, b, b_tail);
 			rb(b, b_tail);

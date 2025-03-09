@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:34:59 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 12:48:06 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:03:40 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ bool	rotate(t_stack **head, t_stack **tail)
 {
 	if (ft_list_size(*head) < 2)
 		return (false);
-	insert_end(head, tail, (*head)->n, NULL);
+	insert_end(head, tail, (*head)->n, (*head)->position);
 	remove_node(*head, head, tail);
 	return (true);
 }

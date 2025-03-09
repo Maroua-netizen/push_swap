@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:36:18 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 16:36:29 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:03:27 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ bool	push(t_stack **head1, t_stack **tail1,
 	if (!(*head1))
 		return (false);
 	if (!(*head2))
-		init(head2, tail2, (*head1)->n, NULL);
+		init(head2, tail2, (*head1)->n, (*head1)->position);
 	else
-		insert_begin(head2, (*head1)->n);
+		insert_begin(head2, (*head1)->n, (*head1)->position);
 	remove_node(*head1, head1, tail1);
 	return (true);
 }

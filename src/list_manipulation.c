@@ -6,19 +6,19 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:51:49 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/08 16:24:21 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:04:56 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init(t_stack **head, t_stack **tail, long value, char **strs)
+void	init(t_stack **head, t_stack **tail,
+	long value, int position)
 {
 	t_stack	*new_node;
 
 	if (value > INT_MAX || value < INT_MIN)
 	{
-		free_matrix(strs);
 		ft_printf("Error\n");
 		exit(4);
 	}
@@ -26,13 +26,14 @@ void	init(t_stack **head, t_stack **tail, long value, char **strs)
 	if (!new_node)
 		return ;
 	new_node->n = value;
+	new_node->position = position;
 	new_node->prev = NULL;
 	new_node->next = NULL;
 	*head = new_node;
 	*tail = new_node;
 }
 
-void	insert_begin(t_stack **head, int value)
+void	insert_begin(t_stack **head, int value, int position)
 {
 	t_stack	*new_node;
 
@@ -41,18 +42,19 @@ void	insert_begin(t_stack **head, int value)
 		return ;
 	new_node->prev = NULL;
 	new_node->n = value;
+	new_node->position = position;
 	new_node->next = *head;
 	(*head)->prev = new_node;
 	*head = new_node;
 }
 
-void	insert_end(t_stack **head, t_stack **tail, long value, char **strs)
+void	insert_end(t_stack **head, t_stack **tail,
+	long value, int position)
 {
 	t_stack	*new_node;
 
 	if (value > INT_MAX || value < INT_MIN)
 	{
-		free_matrix(strs);
 		free_list(head, tail);
 		ft_printf("Error\n");
 		exit(5);
@@ -61,6 +63,7 @@ void	insert_end(t_stack **head, t_stack **tail, long value, char **strs)
 	if (!new_node)
 		return ;
 	new_node->n = value;
+	new_node->position = position;
 	new_node->next = NULL;
 	new_node->prev = *tail;
 	(*tail)->next = new_node;

@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:50 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/09 14:02:55 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:12:36 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,14 @@ void	pb(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 bool	swap(t_stack **a);
 void	sa(t_stack **a);
 void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
 
 bool	rotate(t_stack **head, t_stack **tail);
 void	ra(t_stack **a, t_stack **a_tail);
 void	rb(t_stack **b, t_stack **b_tail);
-void	rr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 
 bool	reverse_rotate(t_stack **head, t_stack **tail);
 void	rra(t_stack **a, t_stack **a_tail);
 void	rrb(t_stack **b, t_stack **b_tail);
-void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);
 
 //Sorting
 void	sort(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail);

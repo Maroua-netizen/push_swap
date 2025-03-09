@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 09:37:21 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/07 12:47:10 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:13:13 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,5 @@ void	sa(t_stack **a)
 void	sb(t_stack **b)
 {
 	if (swap(b))
-		ft_printf("sb\n");
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	if (swap(a) && swap(b))
-		ft_printf("ss\n");
-	else if (swap(a) && !swap(b))
-		ft_printf("sa\n");
-	else if (!swap(a) && swap(b))
 		ft_printf("sb\n");
 }

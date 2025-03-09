@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:41:57 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/09 13:47:46 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 15:13:10 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,5 @@ void	rra(t_stack **a, t_stack **a_tail)
 void	rrb(t_stack **b, t_stack **b_tail)
 {
 	if (reverse_rotate(b, b_tail))
-		ft_printf("rrb\n");
-}
-
-void	rrr(t_stack **a, t_stack **a_tail, t_stack **b, t_stack **b_tail)
-{
-	if (reverse_rotate(a, a_tail) && reverse_rotate(b, b_tail))
-		ft_printf("rrr\n");
-	else if (reverse_rotate(a, a_tail) && !reverse_rotate(b, b_tail))
-		ft_printf("rra\n");
-	else if (!reverse_rotate(a, a_tail) && reverse_rotate(b, b_tail))
 		ft_printf("rrb\n");
 }

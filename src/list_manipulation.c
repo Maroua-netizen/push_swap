@@ -6,14 +6,13 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:51:49 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/09 14:04:56 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:42:02 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init(t_stack **head, t_stack **tail,
-	long value, int position)
+void	init(t_stack **head, t_stack **tail, long value, int position)
 {
 	t_stack	*new_node;
 
@@ -48,8 +47,7 @@ void	insert_begin(t_stack **head, int value, int position)
 	*head = new_node;
 }
 
-void	insert_end(t_stack **head, t_stack **tail,
-	long value, int position)
+void	insert_end(t_stack **head, t_stack **tail, long value, int position)
 {
 	t_stack	*new_node;
 

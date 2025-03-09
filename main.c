@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/09 14:05:29 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 16:01:17 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,4 @@ static void	parsing(char **av, t_stack **a, t_stack **a_tail)
 		free_matrix(strs);
 		i++;
 	}
-	get_position(a);
 }

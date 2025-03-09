@@ -6,7 +6,7 @@
 /*   By: mmounsif <mmounsif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:22:58 by mmounsif          #+#    #+#             */
-/*   Updated: 2025/03/09 16:01:17 by mmounsif         ###   ########.fr       */
+/*   Updated: 2025/03/09 16:28:00 by mmounsif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	static t_stack	*b_tail;
 
 	if (ac == 1)
-		return (1);
+		return (0);
 	null_check(av);
 	error_check(av);
 	parsing(av, &a, &a_tail);

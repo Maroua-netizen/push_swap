@@ -2,6 +2,10 @@
 
 The goal of the Push Swap project is to sort a list of integers using two stacks and a limited set of operations. The challenge is to achieve the sorting with the minimum number of moves. 
 
+## Visualization
+
+https://github.com/user-attachments/assets/769b9818-bc30-455f-8612-7142afafe1cc
+
 ## Features
 
 - Sort 100 numbers in less than 700 moves
@@ -41,10 +45,6 @@ The following operations are used to sort the numbers:
     rb : rotate stack b
     rra : reverse rotate stack a (shift all elements down by one, the last element becomes the first one)
     rrb : reverse rotate stack b
-
-## Visualization
-
-https://github.com/user-attachments/assets/769b9818-bc30-455f-8612-7142afafe1cc
 
 ## License
 
